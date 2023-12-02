@@ -18,7 +18,7 @@ export default function Sidebar({ authors }: { authors: string[] }) {
     [searchParams],
   );
   return (
-    <div className="border-r pr-8">
+    <div className="border-r border-zinc-400 pr-8">
       <Link className="text-3xl font-semibold" href="/">
         Annyblog 🦊
       </Link>

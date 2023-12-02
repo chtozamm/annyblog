@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 
 function PostCard(post: Post) {
   return (
-    <div>
+    <div className="mb-8 last:mb-0">
       <h2 className="mb-1 mt-0">
         <Link href={post.url} className="text-orange-400 hover:text-orange-300">
           {post.title}
