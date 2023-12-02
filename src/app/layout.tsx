@@ -4,6 +4,7 @@ import "./globals.css";
 import { allPosts } from "contentlayer/generated";
 import { compareDesc } from "date-fns";
 import Sidebar from "./Sidebar";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Annyblog 🦊",
@@ -24,9 +25,14 @@ export default function RootLayout({
       <body
         className={GeistSans.className + ` dark:bg-zinc-950 dark:text-zinc-50`}
       >
+        <header className="flex items-center justify-center p-4 md:hidden">
+          <Link className="text-2xl font-semibold" href="/">
+            🦊
+          </Link>
+        </header>
         <div className="flex gap-4 p-4">
           <Sidebar authors={authors} />
-          <article className="max-w-xl pl-8">{children}</article>
+          <article className="max-w-xl px-4 md:pl-8">{children}</article>
         </div>
       </body>
     </html>

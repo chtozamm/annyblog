@@ -18,31 +18,28 @@ export default function Sidebar({ authors }: { authors: string[] }) {
     [searchParams],
   );
   return (
-    <div className="border-r border-zinc-400 pr-8">
-      <Link className="text-3xl font-semibold" href="/">
-        Annyblog 🦊
-      </Link>
-      <div className="px-8">
-        <div className="mb-1 mt-8 text-lg font-semibold">Authors:</div>
-        <div className="flex flex-col">
-          {authors.map((author: string) => (
-            <Link
-              href={"/" + "?" + createQueryString("author", author)}
-              key={author}
-              className={`${
-                searchParams.get("author") === author ? "font-semibold" : ""
-              } cursor-pointer text-orange-400 hover:text-orange-300`}
-              // onClick={() =>
-              //   router.push(
-              //     pathname + "?" + createQueryString("author", author),
-              //   )
-              // }
-            >
-              {author}
-            </Link>
-          ))}
+    <>
+      <div className="hidden border-r px-8 dark:border-zinc-600 md:block">
+        <Link className="text-3xl font-semibold" href="/">
+          Annyblog 🦊
+        </Link>
+        <div className="">
+          <div className="mb-1 mt-8 text-lg font-semibold">Authors:</div>
+          <div className="flex flex-col">
+            {authors.map((author: string) => (
+              <Link
+                href={"/" + "?" + createQueryString("author", author)}
+                key={author}
+                className={`${
+                  searchParams.get("author") === author ? "font-semibold" : ""
+                } cursor-pointer text-orange-400 hover:text-orange-300`}
+              >
+                {author}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
