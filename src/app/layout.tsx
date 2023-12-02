@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { allPosts } from "contentlayer/generated";
@@ -6,26 +6,46 @@ import { compareDesc } from "date-fns";
 import Sidebar from "./Sidebar";
 import Link from "next/link";
 
+export const viewport: Viewport = {
+  themeColor: "#09090b",
+  initialScale: 1,
+  maximumScale: 1,
+  width: "device-width",
+};
+
 export const metadata: Metadata = {
-  title: "Annyblog",
+  title: {
+    template: "%s | Annyblog",
+    default: "Annyblog",
+  },
+  metadataBase: new URL("https://www.annyblog.fun"),
   description:
     "Share your story with Annyblog and join us exploring the world ✨",
-  viewport: {
-    maximumScale: 1.0,
-    initialScale: 1.0,
-    width: "device-width",
-  },
   openGraph: {
     title: "Annyblog",
     description:
       "Share your story with Annyblog and join us exploring the world ✨",
     url: "https://www.annyblog.fun",
+    images: [
+      {
+        url: "https://www.annyblog.fun/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Annyblog 🦊",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     title: "Annyblog",
     description:
       "Share your story with Annyblog and join us exploring the world ✨",
     card: "summary_large_image",
+    images: {
+      url: "https://www.annyblog.fun/twitter-image.png",
+      alt: "Annyblog 🦊",
+    },
   },
 };
 
