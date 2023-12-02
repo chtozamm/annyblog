@@ -13,8 +13,8 @@ function PostCard(post: Post) {
           {post.title}
         </Link>
       </h2>
-      {/* <span className="mb-2 block text-xs text-gray-600">{post.author}</span> */}
-      <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
+      {/* <span className="mb-2 block text-xs text-zinc-600">{post.author}</span> */}
+      <time dateTime={post.date} className="mb-2 block text-xs text-zinc-600">
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
       <div dangerouslySetInnerHTML={{ __html: post.body.html }} />
