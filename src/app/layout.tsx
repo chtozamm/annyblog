@@ -10,6 +10,11 @@ export const metadata: Metadata = {
   title: "Annyblog",
   description:
     "Share your story with Annyblog and join us exploring the world ✨",
+  viewport: {
+    maximumScale: 1.0,
+    initialScale: 1.0,
+    width: "device-width",
+  },
   openGraph: {
     title: "Annyblog",
     description:
